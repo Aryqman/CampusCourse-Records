@@ -18,11 +18,8 @@ public abstract class Person {
         this.createdDate = LocalDate.now();
         this.active = true;
     }
-
-    // Abstract method demonstrating abstraction
+    
     public abstract String getProfileInfo();
-
-    // Getters and setters demonstrating encapsulation
     public String getId() { return id; }
     public String getFullName() { return fullName; }
     public void setFullName(String fullName) { this.fullName = fullName; }
