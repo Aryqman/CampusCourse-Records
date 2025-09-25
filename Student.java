@@ -7,11 +7,11 @@ import java.util.List;
 import java.util.Objects;
 
 public class Student extends Person {
-    private final String regNo; // Immutable field
+    private final String regNo; 
     private StudentStatus status;
     private final List<Enrollment> enrolledCourses;
     
-    // Static nested class for StudentStatus
+ 
     public static class StudentStatus {
         public static final String ACTIVE = "ACTIVE";
         public static final String INACTIVE = "INACTIVE";
@@ -32,11 +32,11 @@ public class Student extends Person {
                            regNo, fullName, status, email);
     }
 
-    // Immutable value class pattern for registration number
+  
     public String getRegNo() { return regNo; }
     public String getStatus() { return status; }
     public void setStatus(String status) { this.status = status; }
-    public List<Enrollment> getEnrolledCourses() { return new ArrayList<>(enrolledCourses); } // Defensive copy
+    public List<Enrollment> getEnrolledCourses() { return new ArrayList<>(enrolledCourses); } 
 
     public void addEnrollment(Enrollment enrollment) {
         enrolledCourses.add(enrollment);
@@ -46,7 +46,7 @@ public class Student extends Person {
         enrolledCourses.remove(enrollment);
     }
 
-    // Method demonstrating polymorphism
+    
     @Override
     public String toString() {
         return String.format("Student[ID: %s, RegNo: %s, Name: %s, Status: %s]", 
